@@ -92,7 +92,8 @@ export const create_wifi_user = async (arg: USER_VIS_SMS_ARG, checkTwoStepVerifi
 
                 await manager.insert(SMSQueue, smsQueue)
 
-
+               console.log(smsQueue);
+                    
 
 
                 const expiration = getExpiration(policy)

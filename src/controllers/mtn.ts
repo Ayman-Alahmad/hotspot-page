@@ -11,6 +11,11 @@ import config from "../config/config";
 export const MTNSender = async (smsQueue: SMSQueue) => {
     try {
 
+
+        console.log('MTN Sender Start');
+        console.log('MTN Sender Data: ',smsQueue);
+        
+
         // return await fakeSender(smsQueue)
 
         //return gsm or error msg
