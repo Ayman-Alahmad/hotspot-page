@@ -30,6 +30,11 @@ app.use(cros({ origin: ['http://localhost:4300', 'http://localhost:4200'] }))
 app.use('/assets', express.static(config.asstes))
 
 
+
+console.log(config.asstes);
+
+
+
 app.set('trust proxy', true)
 
 /** Log the request */
