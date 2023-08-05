@@ -1,5 +1,5 @@
-import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm"
-import { mobileTransform, toLowerTransform, trimTransform } from "../../utilities/transformer"
+import { BaseEntity, Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm"
+import { dateTransform, mobileTransform, toLowerTransform, trimTransform } from "../../utilities/transformer"
 import { Nas } from "./nas"
 import { Policies } from "./policies"
 import { Pos } from "./pos"
@@ -69,7 +69,11 @@ export class Subscribers extends BaseEntity {
     pos: Pos
 
 
+    @CreateDateColumn({ transformer: dateTransform })
+    createdAt: Date
 
+    @UpdateDateColumn({ transformer: dateTransform })
+    updatedAt: Date
 
     //reply: Radreply[]
     check: Radcheck[]

@@ -102,7 +102,9 @@ export const create_wifi_user = async (arg: USER_VIS_SMS_ARG, checkTwoStepVerifi
                     mobile: smsQueue.gsm,
                     posId: nas.posId,
                     nasname: nas.nasname,
-                    createdByUser: 'SYSTEM'
+                    createdAt:new Date(),
+                    updatedAt:new Date()
+              
                 })
 
 
