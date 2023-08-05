@@ -27,7 +27,7 @@ const app = express();
 app.use(cros({ origin: ['http://localhost:4300', 'http://localhost:4200'] }))
 
 
-app.use('/assets', express.static('assets'))
+app.use('/assets', express.static(config.asstes))
 
 
 app.set('trust proxy', true)
