@@ -67,7 +67,7 @@ export class MikrotikVariables {
     server_name: string;
     constructor(post) {
         this.mac = post['mac'];
-        this.ip = post['ip'];
+        this.ip = post['ip'] ? post['ip'].split(":")[0] : post['ip'];
         this.username = post['username'];
         this.linklogin = post['link-login'];
         this.linkorig = post['link-orig'];
