@@ -86,7 +86,7 @@ export class MikrotikVariables {
         this.uptime = post['uptime'];
         this.refreshtimeout = post['refresh-timeout'];
         this.linkstatus = post['link-status'];
-        this.server_address = post['server-address'];
+        this.server_address = post['server-address'] ? post['server-address'].split(":")[0] : post['server-address'];;
         this.server_name = post['server-name'];
 
     }

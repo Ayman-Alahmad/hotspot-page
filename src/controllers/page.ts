@@ -27,13 +27,6 @@ const getData = async (body: any) => {
     const mikrotik = new MikrotikVariables(body)
     const { mobile, verificationCode, password } = body
 
-    console.log('--------------------------------------------------');
-        
-    console.log(mikrotik);
-    
-    console.log('--------------------------------------------------');
-
-
     const {profile, ...nas } = await Nas.findOne({
         loadEagerRelations: false, where: { nasname: mikrotik.server_address }, relations: ['profile']
     })
