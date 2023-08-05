@@ -143,6 +143,8 @@ export const create_wifi_user = async (arg: USER_VIS_SMS_ARG, checkTwoStepVerifi
             resolve({ username: result.smsQueue.username, expiration: result.expiration, mobile: arg.mobile })
 
         } catch (error) {
+            console.log(error);
+            
             if (error.status === 400)
                 reject(error.message)
             else
