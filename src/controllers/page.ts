@@ -27,7 +27,7 @@ const getData = async (body: any) => {
     const mikrotik = new MikrotikVariables(body)
     const { mobile, verificationCode, password } = body
 
-    const {profile, ...nas } = await Nas.findOne({
+    const { profile, ...nas } = await Nas.findOne({
         loadEagerRelations: false, where: { nasname: mikrotik.server_address }, relations: ['profile']
     })
 
@@ -92,7 +92,7 @@ router.post('/send-sms', async (req: Request, res: Response, next: NextFunction)
 
     try {
 
-        await create_wifi_user({
+        const user = await create_wifi_user({
             mobile: data.mobile,
             mac: data.mikrotik.mac,
             ip: data.mikrotik.ip,
@@ -100,10 +100,12 @@ router.post('/send-sms', async (req: Request, res: Response, next: NextFunction)
             verificationCode: data.verificationCode
         })
 
+        data.mikrotik.username=user.username
         res.setHeader('Content-Type', 'text/html');
         res.send(ejs.render(data.profile.verifySMS, { data }))
 
     } catch (error) {
+        console.log(error);
         res.send(ejs.render(data.profile.signIn, { data }))
     }
 
