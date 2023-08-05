@@ -13,6 +13,7 @@ export class Policies extends BaseEntity {
     @Column({ length: 512, transformer: trimTransform })
     description: string
 
+    @Column()
     period: 'minutes' | 'hours' | 'days' | 'weeks' | 'months' | 'years'
 
     @Column()

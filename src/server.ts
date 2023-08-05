@@ -17,7 +17,6 @@ import logging from './config/logging';
 import router from './routes';
 
 
-
 const NAMESPACE = 'Server';
 const app = express();
 
@@ -75,7 +74,6 @@ const ServerStart = async () => {
         // cron.schedule('*/1 * * * *', () => {
         //     scheduled_sms_sender()
         // })
-
 
     } catch (error) {
         console.log(error);

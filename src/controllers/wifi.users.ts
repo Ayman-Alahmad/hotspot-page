@@ -92,10 +92,6 @@ export const create_wifi_user = async (arg: USER_VIS_SMS_ARG, checkTwoStepVerifi
 
                 await manager.insert(SMSQueue, smsQueue)
 
-               console.log(smsQueue);
-                    
-
-
                 const expiration = getExpiration(policy)
                 // add subscriber  
                 await manager.insert(Subscribers, {
@@ -110,9 +106,6 @@ export const create_wifi_user = async (arg: USER_VIS_SMS_ARG, checkTwoStepVerifi
                     updatedAt:new Date()
               
                 })
-
-                console.log('Subscribers created');
-                
 
                 await manager.insert(Radcheck, [
                     {
@@ -133,11 +126,7 @@ export const create_wifi_user = async (arg: USER_VIS_SMS_ARG, checkTwoStepVerifi
                         op: ':=', value: nas.nasname
                     }
                 ])
-
-
-
                 return { smsQueue, expiration }
-
             })
 
             await MTNSender(result.smsQueue)
@@ -154,5 +143,3 @@ export const create_wifi_user = async (arg: USER_VIS_SMS_ARG, checkTwoStepVerifi
     })
 
 }
-
-
