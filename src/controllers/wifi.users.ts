@@ -84,6 +84,7 @@ export const create_wifi_user = async (arg: USER_VIS_SMS_ARG, checkTwoStepVerifi
                         mac: arg.mac,
                         nasname: nas.nasname,
                         posId: nas.posId,
+                        createdAt:new Date()
                     })
 
                 await manager.insert(SMSQueue, smsQueue)
