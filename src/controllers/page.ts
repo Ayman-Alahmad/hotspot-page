@@ -48,6 +48,9 @@ router.post('/login', async (req: Request, res: Response, next: NextFunction) =>
         let template = ''
         const data = await getData(req.body)
 
+        console.log(data);
+        
+
         if (!data.nas.allow_SMS) {
             template = data.profile.login
 
