@@ -111,7 +111,8 @@ export const create_wifi_user = async (arg: USER_VIS_SMS_ARG, checkTwoStepVerifi
               
                 })
 
-
+                console.log('Subscribers created');
+                
 
                 await manager.insert(Radcheck, [
                     {
