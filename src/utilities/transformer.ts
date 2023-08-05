@@ -8,7 +8,7 @@ import path from 'path'
 export const assetsPathTransform = {
 
     from(value: string) {
-        return !value ? value : path.join('/api', value)
+        return  value//!value ? value : path.join('/api', value)
     },
     to(value: string) {
         if (!value) return value
