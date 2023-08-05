@@ -21,7 +21,7 @@ const redis = {
 const MTN = {
     user: process.env.MTN_SMS_USER,
     pass: process.env.MTN_SMS_PASS,
-    sender:process.env.MTN_SMS_SENDER
+    sender: process.env.MTN_SMS_SENDER
 }
 
 const MIKROTIK_HOTSPOT_DNS = process.env.MIKROTIK_HOTSPOT_DNS || 'http://home.hotspot.sy'
@@ -47,7 +47,8 @@ const config = {
     sms: {
         mtn: MTN
     },
-    MIKROTIK_HOTSPOT_DNS
+    MIKROTIK_HOTSPOT_DNS,
+    asstes: process.env.HOTSPOT_PAGE_ASSTES
 }
 
 export default config;
