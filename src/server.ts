@@ -27,6 +27,8 @@ const app = express();
 app.use(cros({ origin: ['http://localhost:4300', 'http://localhost:4200'] }))
 
 
+//localhost:3008/assets/hotspot/css/style.css
+
 app.use('/assets', express.static('assets'))
 
 
