@@ -27,7 +27,7 @@ const app = express();
 app.use(cros({ origin: ['http://localhost:4300', 'http://localhost:4200'] }))
 
 
-app.use('/api/assets', express.static('assets'))
+app.use('/assets', express.static('assets'))
 
 
 app.set('trust proxy', true)
@@ -59,7 +59,7 @@ const ServerStart = async () => {
     try {
 
         // start all databases connections
-        await db_initiate({ logging: true, synchronize: false, migration: true })
+        await db_initiate({ logging: true, synchronize: false, migration: false })
 
         // start redis client
 
