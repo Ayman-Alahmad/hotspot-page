@@ -84,6 +84,7 @@ const logErrorToDataBase = async (err: any, request: Request) => {
         const repository = getDataSource('admin').getRepository(SystemErrorsLog)
 
         const entity = repository.create({
+            errorDate:new Date(),
             url: request.url,
             method: request.method,
             errorCode: err.status || '500',
